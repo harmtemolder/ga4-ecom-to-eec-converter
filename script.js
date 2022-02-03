@@ -22,7 +22,7 @@ let checkoutOption;
 let checkoutStep;
 if (data.checkoutSettings) {
   data.checkoutSettings.forEach((checkoutArray) => {
-    if (checkoutArray.GTMEvent === event && checkoutArray.GTMVariable === checkoutArray.GTMVariableValue) {
+    if (checkoutArray.GTMEvent === event && checkoutArray.GTMVariable.search(checkoutArray.GTMVariableValue) > -1) {
       eecAction = checkoutArray.checkoutAction;
       checkoutStep = checkoutArray.checkoutStep;
       checkoutOption = checkoutArray.checkoutOption;
